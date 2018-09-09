@@ -1,4 +1,4 @@
-package truckpilot.app.gojek.com.notesappwithandroidarchcomponents
+package app.com.notesappwithandroidarchcomponents
 
 import org.junit.Test
 

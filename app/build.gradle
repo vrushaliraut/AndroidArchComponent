@@ -3,17 +3,23 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "truckpilot.app.gojek.com.notesappwithandroidarchcomponents"
+        applicationId "app.com.notesappwithandroidarchcomponents"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    lintOptions{
+       abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false

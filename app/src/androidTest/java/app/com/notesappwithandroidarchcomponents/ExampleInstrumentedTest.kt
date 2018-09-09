@@ -1,4 +1,4 @@
-package truckpilot.app.gojek.com.notesappwithandroidarchcomponents
+package app.com.notesappwithandroidarchcomponents
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("truckpilot.app.gojek.com.notesappwithandroidarchcomponents", appContext.packageName)
+        assertEquals("app.com.notesappwithandroidarchcomponents", appContext.packageName)
     }
 }
