@@ -1,6 +1,9 @@
 package app.com.notesappwithandroidarchcomponents
 
 import android.app.Activity
+import android.content.Context
+import android.support.multidex.MultiDexApplication
+import app.com.notesappwithandroidarchcomponents.di.component.AppComponent
 import app.com.notesappwithandroidarchcomponents.helpers.LogDebugTree
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -10,9 +13,17 @@ import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class NotesApplication : MultidexApplication(), HasActivityInjector {
+class NotesApplication : MultiDexApplication(), HasActivityInjector {
+
     companion object {
         lateinit var component: AppComponent
+        fun applicationContext(): Context {
+            return this.applicationContext()
+        }
+
+        fun getAppComponent(): AppComponent {
+            return component
+        }
     }
 
     @Inject
@@ -20,12 +31,11 @@ class NotesApplication : MultidexApplication(), HasActivityInjector {
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> = dispatchingAndroidInjector
 
-
     override fun onCreate() {
         super.onCreate()
         component = DaggerAppComponent
                 .builder()
-                .application(this)
+                .application(this@NotesApplication)
                 .build()
         component.inject(this)
         initLogging()
