@@ -20,8 +20,9 @@ class NotesRepository(var db: NotesDatabase) {
         val mutableLiveData = MutableLiveData<Notes>()
         Single.fromCallable {
             db.noteDao().insert(notes)
-        }.subScribeOn(Schedulers.io())
-                .ObserverOn(AndroidSchedulers.mainThread())
+        }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ id ->
                     Timber.tag("DB").d("inserted record with $id")
                     notes.id = id

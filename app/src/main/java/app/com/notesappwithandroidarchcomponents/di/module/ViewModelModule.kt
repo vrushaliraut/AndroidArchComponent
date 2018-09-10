@@ -10,13 +10,13 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-internal abstract class ViewModelModule {
+ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
     @ViewModelKey(NoteViewModel::class)
-    internal abstract fun bindMainViewModel(noteViewModel: NoteViewModel): ViewModel
+     abstract fun bindMainViewModel(noteViewModel: NoteViewModel): ViewModel
 
     @Binds
-    internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

@@ -1,7 +1,6 @@
 package app.com.notesappwithandroidarchcomponents.di.scope
 
 import android.arch.lifecycle.ViewModel
-import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.MapKey
 import kotlin.reflect.KClass
 
@@ -9,4 +8,4 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
 @MapKey
-internal annotation class ViewModelKey(val value: KClass<NoteViewModel>)
+internal annotation class ViewModelKey(val value: KClass<out ViewModel>)
