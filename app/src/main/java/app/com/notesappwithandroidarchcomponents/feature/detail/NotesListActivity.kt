@@ -85,6 +85,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item?.itemId == R.id.actionSort) {
+
             showSortDialog()
             true
         } else
