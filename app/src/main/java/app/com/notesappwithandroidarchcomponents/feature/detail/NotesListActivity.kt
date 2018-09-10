@@ -10,6 +10,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import app.com.notesappwithandroidarchcomponents.NotesDetailActivity
+import app.com.notesappwithandroidarchcomponents.R
+import app.com.notesappwithandroidarchcomponents.ViewModelFactory
 import app.com.notesappwithandroidarchcomponents.data.Notes
 import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.android.AndroidInjection
@@ -80,7 +82,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == R.id.actionSort) {
             showSortDialog()
             true
@@ -92,7 +94,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
         val sortDialogBuilder = AlertDialog.Builder(this@NotesListActivity)
         sortDialogBuilder.setTitle("Sort")
 
-        val arrayAdapter = ArrayAdapter<String>(this@NotesListActivity, R.layout.select_dialog_singlechoice)
+        val arrayAdapter = ArrayAdapter<String>(this@NotesListActivity, android.R.layout.select_dialog_singlechoice)
         arrayAdapter.add("Title ascending")
         sortDialogBuilder.setNegativeButton("cancel", { dialog, _ -> dialog.dismiss() })
 

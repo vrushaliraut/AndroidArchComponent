@@ -2,6 +2,7 @@ package app.com.notesappwithandroidarchcomponents.di.module
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import app.com.notesappwithandroidarchcomponents.ViewModelFactory
 import app.com.notesappwithandroidarchcomponents.di.scope.ViewModelKey
 import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.Binds
