@@ -8,12 +8,15 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import app.com.notesappwithandroidarchcomponents.NotesDetailActivity
+import app.com.notesappwithandroidarchcomponents.R
+import app.com.notesappwithandroidarchcomponents.ViewModelFactory
 import app.com.notesappwithandroidarchcomponents.data.Notes
 import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.activity_list_notes.*
+import kotlinx.android.synthetic.main.activity_list_notes.fab
+import kotlinx.android.synthetic.main.activity_list_notes.rvNotes
+import kotlinx.android.synthetic.main.activity_list_notes.toolbar
 import javax.inject.Inject
 
 class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
@@ -76,12 +79,12 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_notes_list, menu)
         val item = menu?.findItem(R.id.actionSearch)
-        searchView.setMenuItem(item)
+   //     searchView.setMenuItem(item)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return if (item.itemId == R.id.actionSort) {
+        return if (item?.itemId == R.id.actionSort) {
             showSortDialog()
             true
         } else
@@ -91,7 +94,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
     private fun showSortDialog() {
         val sortDialogBuilder = AlertDialog.Builder(this@NotesListActivity)
         sortDialogBuilder.setTitle("Sort")
-
+/*
         val arrayAdapter = ArrayAdapter<String>(this@NotesListActivity, R.layout.select_dialog_singlechoice)
         arrayAdapter.add("Title ascending")
         sortDialogBuilder.setNegativeButton("cancel", { dialog, _ -> dialog.dismiss() })
@@ -105,7 +108,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
             }
             fetchData(sort)
         })
-        sortDialogBuilder.show()
+        sortDialogBuilder.show()*/
     }
 
 

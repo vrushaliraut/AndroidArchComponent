@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.support.multidex.MultiDexApplication
 import app.com.notesappwithandroidarchcomponents.di.component.AppComponent
+import app.com.notesappwithandroidarchcomponents.di.component.DaggerAppComponent
 import app.com.notesappwithandroidarchcomponents.helpers.LogDebugTree
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -35,7 +36,7 @@ class NotesApplication : MultiDexApplication(), HasActivityInjector {
         super.onCreate()
         component = DaggerAppComponent
                 .builder()
-                .application(this@NotesApplication)
+                .applicatlion(  this@NotesApplication)
                 .build()
         component.inject(this)
         initLogging()

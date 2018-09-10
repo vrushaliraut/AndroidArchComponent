@@ -37,7 +37,6 @@ class AppModule {
 
     @Provides
     @Singleton
-    @JvmSuppressWildcards
     fun provideViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory {
         return factory
     }
