@@ -106,7 +106,8 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
                     "Title ascending"
                 }
             }
-            fetchData(sort)
+           //this seems wrong
+            // fetchData(sort)
         })
         sortDialogBuilder.show()*/
     }
