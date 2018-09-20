@@ -25,12 +25,12 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-            <com.miguelcatalan.materialsearchview.MaterialSearchView
+            <!--<com.miguelcatalan.materialsearchview.MaterialSearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_55"
-                android:textColorHint="@color/black_55" />
+                android:textColorHint="@color/black_55" />-->
         </FrameLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -58,7 +58,6 @@
         app:fabSize="normal"
         app:layout_anchor="@+id/rvNotes"
         app:layout_anchorGravity="bottom|end"
-        app:layout_behavior="android.tech.znotes.helpers.FABScrollMagicHelper"
         app:rippleColor="@color/ripple"
         app:srcCompat="@drawable/ic_add_white_24dp" />
 </android.support.design.widget.CoordinatorLayout>

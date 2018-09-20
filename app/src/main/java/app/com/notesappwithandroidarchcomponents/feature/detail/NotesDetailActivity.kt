@@ -14,6 +14,7 @@ import android.view.MenuItem
 import app.com.notesappwithandroidarchcomponents.data.Notes
 import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.activity_list_notes.*
 import kotlinx.android.synthetic.main.activity_notes_detail.*
 import javax.inject.Inject
 
@@ -85,7 +86,7 @@ class NotesDetailActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        setSupportActionBar(toolbar)
+       // setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setHomeButtonEnabled(true)
             title = if (notes.title.isBlank())
@@ -95,16 +96,20 @@ class NotesDetailActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        setProgressBar()
-    }
-
-    private fun setProgressBar() {
         progressDialog = Dialog(this@NotesDetailActivity, R.style.ProgressDialog)
         progressDialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         progressDialog.setContentView(layoutInflater.inflate(R.layout.layout_progress_fullscreen, null))
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.setCancelable(false)
     }
+
+   /* private fun setProgressBar() {
+        progressDialog = Dialog(this@NotesDetailActivity, R.style.ProgressDialog)
+        progressDialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        progressDialog.setContentView(layoutInflater.inflate(R.layout.layout_progress_fullscreen, null))
+        progressDialog.setCanceledOnTouchOutside(false)
+        progressDialog.setCancelable(false)
+    }*/
 
     private fun initData() {
         notes = if (intent.hasExtra("notes")) {

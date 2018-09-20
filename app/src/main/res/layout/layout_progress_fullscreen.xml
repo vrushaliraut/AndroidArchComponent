@@ -19,8 +19,7 @@
             android:layout_above="@+id/lavProgress"
             android:layout_marginBottom="@dimen/margin_default"
             android:layout_centerHorizontal="true"
-            android:text="@string/saving_note"
-    />
+            android:text="@string/saving_note" />
     <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lavProgress"
             android:layout_width="@dimen/margin_craziest"

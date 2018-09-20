@@ -14,9 +14,7 @@ import app.com.notesappwithandroidarchcomponents.ViewModelFactory
 import app.com.notesappwithandroidarchcomponents.data.Notes
 import app.com.notesappwithandroidarchcomponents.feature.NoteViewModel
 import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.activity_list_notes.fab
-import kotlinx.android.synthetic.main.activity_list_notes.rvNotes
-import kotlinx.android.synthetic.main.activity_list_notes.toolbar
+import kotlinx.android.synthetic.main.activity_list_notes.*
 import javax.inject.Inject
 
 class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
@@ -54,7 +52,7 @@ class NotesListActivity :AppCompatActivity(), RVAdapterItemClickListener{
     }
 
     private fun initViews() {
-        setSupportActionBar(toolbar)
+        //setSupportActionBar(toolbar)
         supportActionBar?.apply {
             title = "Notes"
         }
